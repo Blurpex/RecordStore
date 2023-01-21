@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dark Side of the Rainbow</title>
+</head>
+<body>
+
+<th:block th:fragment="header">
+
+    <header>
+        <div class="jumbotron">
+            <img src="images/logo.png" alt="logo" class="logo">
+            <h1 class="display-4 cntr rainbow-td rainbow-lr">Dark Side of the Rainbow!</h1>
+            <p class="lead cntr">Welcome to Dark Side of the Rainbow</p>
+        </div>
+        <br style="clear: both;">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navigation</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item active">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/about" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/contact" class="nav-link">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/careers" class="nav-link">Careers</a>
+                        </li> <li class="nav-item">
+                            <a href="/view" class="nav-link">View</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/console" class="nav-link">H2 Console</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" method="get" action="/search">
+                        <input class="form-control me-2" name="term" type="search" placeholder="Search"
+                               aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <div style="float: right">
+                        <p th:if="${#httpServletRequest.remoteUser}" th:inline="text">
+                            [[${#httpServletRequest.remoteUser}]] <a href="/logout">(Logout)</a></p>
+                        <a th:unless="${#httpServletRequest.remoteUser}" href="/login">Log In</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+</th:block>
+
+<th:block th:fragment="footer">
+    <footer>
+        <cite>&copy; 2021 - Dark Side of the Rainbow</cite>
+    </footer>
+
+</th:block>
+
+</body>
+</html>

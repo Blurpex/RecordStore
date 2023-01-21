@@ -1,0 +1,40 @@
+body {
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+
+section.content {
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+.cntr {
+    text-align: center;
+}
+
+.rainbow-lr {
+    background: linear-gradient(to right, red, orange , yellow, green, cyan, blue, violet);
+    color:transparent;
+    background-clip: text;
+}
+.rainbow-td {
+    background: linear-gradient(to bottom, red, orange , yellow, green, cyan, blue, violet);
+    color:transparent;
+    background-clip: text;
+}
+
+p.lead {
+    text-align: center;
+}
+
+img.logo {
+    display: block;
+    float: left;
+    width: 150px;
+}
+
+section#content {
+    min-height: 500px;
+    margin-bottom: 200px;
+}
